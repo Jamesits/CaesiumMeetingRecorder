@@ -112,9 +112,9 @@ Private Declare Function DwmIsCompositionEnabled Lib "dwmapi.dll" (ByRef enabled
 Private Declare Function DwmExtendFrameIntoClientArea Lib "dwmapi.dll" (ByVal hwnd As Long, margin As MARGINS) As Long
 Private Declare Sub InitCommonControls Lib "comctl32.dll" ()
 Private Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long) As Long
-Private Declare Function SelectObject Lib "gdi32" (ByVal hDC As Long, ByVal hObject As Long) As Long
+Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal hObject As Long) As Long
 Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect As RECT) As Long
-Private Declare Function FillRect Lib "user32" (ByVal hDC As Long, lpRect As RECT, ByVal hBrush As Long) As Long
+Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As RECT, ByVal hBrush As Long) As Long
 Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As Long
 
 Private Type RECT
@@ -141,6 +141,11 @@ Private Const HTCAPTION = 2
 
 Private Sub ButtonAbout_Click()
 Load FrmAbout
+End Sub
+
+Private Sub ButtonClock_Click()
+Load FrmClock
+ FrmClock.Show
 End Sub
 
 Private Sub ButtonClose_Click()
@@ -176,10 +181,10 @@ End Sub
 Private Sub Form_Paint()
     Dim hBrush As Long, m_Rect As RECT, hBrushOld As Long
     hBrush = CreateSolidBrush(RGB(0, 0, 0))
-    hBrushOld = SelectObject(Me.hDC, hBrush)
+    hBrushOld = SelectObject(Me.hdc, hBrush)
     GetClientRect Me.hwnd, m_Rect
-    FillRect Me.hDC, m_Rect, hBrush
-    SelectObject Me.hDC, hBrushOld
+    FillRect Me.hdc, m_Rect, hBrush
+    SelectObject Me.hdc, hBrushOld
     DeleteObject hBrush
 End Sub
 
