@@ -33,12 +33,11 @@ Public Sec, Hms
 
 Private Sub Form_Load()
 Me.Hide
-Sec = 0
-Hms = 0
+
 End Sub
 
 
-Public Sub Enable()
+Public Sub Start()
 Timer1.Enabled = True
 Timer2.Enabled = True
 End Sub
@@ -53,7 +52,14 @@ Hms = Hms + 1
 '0.1s
 End Sub
 
-Public Sub Disable()
+Public Sub Pause()
 Timer1.Enabled = False
 Timer2.Enabled = False
 End Sub
+
+Public Sub Clear()
+Sec = 0
+Hms = 0
+End Sub
+
+

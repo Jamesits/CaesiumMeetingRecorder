@@ -1,20 +1,23 @@
 VERSION 5.00
 Object = "{BAACC8BE-5CF7-41EE-BE50-E7D125FEF313}#1.0#0"; "APNGViewer.ocx"
 Begin VB.Form FrmDock 
-   BorderStyle     =   0  'None
-   Caption         =   "Form1"
-   ClientHeight    =   1470
-   ClientLeft      =   8010
-   ClientTop       =   0
-   ClientWidth     =   5850
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "Ceasium Meeting Recorder - Docking Panel"
+   ClientHeight    =   885
+   ClientLeft      =   8055
+   ClientTop       =   375
+   ClientWidth     =   4155
+   ControlBox      =   0   'False
    LinkTopic       =   "Form1"
-   ScaleHeight     =   1470
-   ScaleWidth      =   5850
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   885
+   ScaleWidth      =   4155
    ShowInTaskbar   =   0   'False
    Begin APNGViewer.ucAPNG ButtonExpand 
       Height          =   480
-      Left            =   2640
-      Top             =   1080
+      Left            =   1800
+      Top             =   540
       Width           =   480
       _ExtentX        =   847
       _ExtentY        =   847
@@ -22,9 +25,9 @@ Begin VB.Form FrmDock
    End
    Begin APNGViewer.ucAPNG ButtonClose 
       Height          =   960
-      Left            =   4800
+      Left            =   3360
       ToolTipText     =   "退出"
-      Top             =   120
+      Top             =   -120
       Width           =   960
       _ExtentX        =   1693
       _ExtentY        =   1693
@@ -32,9 +35,9 @@ Begin VB.Form FrmDock
    End
    Begin APNGViewer.ucAPNG ButtonClock 
       Height          =   960
-      Left            =   0
+      Left            =   -60
       ToolTipText     =   "计时"
-      Top             =   120
+      Top             =   -120
       Width           =   960
       _ExtentX        =   1693
       _ExtentY        =   1693
@@ -42,9 +45,9 @@ Begin VB.Form FrmDock
    End
    Begin APNGViewer.ucAPNG ButtonRec 
       Height          =   960
-      Left            =   1560
+      Left            =   1020
       ToolTipText     =   "记录"
-      Top             =   120
+      Top             =   -120
       Width           =   960
       _ExtentX        =   1693
       _ExtentY        =   1693
@@ -52,9 +55,9 @@ Begin VB.Form FrmDock
    End
    Begin APNGViewer.ucAPNG ButtonOpenFile 
       Height          =   960
-      Left            =   3240
+      Left            =   2220
       ToolTipText     =   "打开"
-      Top             =   120
+      Top             =   -120
       Width           =   960
       _ExtentX        =   1693
       _ExtentY        =   1693
@@ -71,9 +74,9 @@ Private Declare Function DwmIsCompositionEnabled Lib "dwmapi.dll" (ByRef enabled
 Private Declare Function DwmExtendFrameIntoClientArea Lib "dwmapi.dll" (ByVal hwnd As Long, margin As MARGINS) As Long
 Private Declare Sub InitCommonControls Lib "comctl32.dll" ()
 Private Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long) As Long
-Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal hObject As Long) As Long
+Private Declare Function SelectObject Lib "gdi32" (ByVal hDC As Long, ByVal hObject As Long) As Long
 Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect As RECT) As Long
-Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As RECT, ByVal hBrush As Long) As Long
+Private Declare Function FillRect Lib "user32" (ByVal hDC As Long, lpRect As RECT, ByVal hBrush As Long) As Long
 Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As Long
 Dim en
 Private Type RECT
@@ -106,6 +109,8 @@ End Sub
 
 Private Sub Form_Load()
 Me.Top = 0
+'Me.Caption = " " 'FrmWizard.Caption
+'Me.Caption = "Caesium Meeting Recorder"
 Me.Left = Int((Screen.Width - Me.Width) / 2)
     Dim mg As MARGINS, en As Long
     mg.m_Left = -1
@@ -124,10 +129,10 @@ Private Sub Form_Paint()
     If en Then
     Dim hBrush As Long, m_Rect As RECT, hBrushOld As Long
     hBrush = CreateSolidBrush(RGB(0, 0, 0))
-    hBrushOld = SelectObject(Me.hdc, hBrush)
+    hBrushOld = SelectObject(Me.hDC, hBrush)
     GetClientRect Me.hwnd, m_Rect
-    FillRect Me.hdc, m_Rect, hBrush
-    SelectObject Me.hdc, hBrushOld
+    FillRect Me.hDC, m_Rect, hBrush
+    SelectObject Me.hDC, hBrushOld
     DeleteObject hBrush
     End If
 

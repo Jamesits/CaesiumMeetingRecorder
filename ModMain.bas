@@ -3,11 +3,12 @@ Option Explicit
 Private Declare Sub InitCommonControls Lib "comctl32.dll" ()
 Public Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
 Public Versionstring
-
+Public m_transparencyKey As Long
 
 Public Sub Main()
 InitCommonControls
 Versionstring = "Version " & App.Major & "." & App.Minor & "." & "0" & "." & App.Revision & " " & "Pre-Alpha"
+m_transparencyKey = RGB(0, 0, 0)
 Load FrmSplash
 FrmSplash.Show
 Load FrmWizard
