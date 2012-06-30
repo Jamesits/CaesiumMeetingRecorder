@@ -15,3 +15,11 @@ FrmSplash.Hide
 FrmWizard.Show
 Unload FrmSplash
 End Sub
+
+Public Sub quit()
+Dim f As Form
+For Each f In Forms
+Unload f
+Next
+End
+End Sub

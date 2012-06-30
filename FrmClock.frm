@@ -1,14 +1,46 @@
 VERSION 5.00
 Begin VB.Form FrmClock 
+   BorderStyle     =   1  'Fixed Single
    Caption         =   "¼ÆÊ±Æ÷"
    ClientHeight    =   3030
-   ClientLeft      =   120
-   ClientTop       =   450
-   ClientWidth     =   6060
+   ClientLeft      =   45
+   ClientTop       =   375
+   ClientWidth     =   5955
+   BeginProperty Font 
+      Name            =   "Î¢ÈíÑÅºÚ"
+      Size            =   9
+      Charset         =   134
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
    ScaleHeight     =   3030
-   ScaleWidth      =   6060
+   ScaleWidth      =   5955
    StartUpPosition =   3  '´°¿ÚÈ±Ê¡
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "00:00:00"
+      BeginProperty Font 
+         Name            =   "Î¢ÈíÑÅºÚ"
+         Size            =   72
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   1860
+      Left            =   120
+      TabIndex        =   0
+      Top             =   360
+      Width           =   5730
+   End
 End
 Attribute VB_Name = "FrmClock"
 Attribute VB_GlobalNameSpace = False
@@ -49,6 +81,7 @@ Private Sub Form_Load()
     If en Then
       DwmExtendFrameIntoClientArea Me.hwnd, mg
     End If
+
 End Sub
 
 Private Sub Form_Paint()
@@ -65,3 +98,4 @@ Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y A
     ReleaseCapture
     SendMessage Me.hwnd, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0
 End Sub
+

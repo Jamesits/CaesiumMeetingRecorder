@@ -3,7 +3,7 @@ Object = "{BAACC8BE-5CF7-41EE-BE50-E7D125FEF313}#1.0#0"; "APNGViewer.ocx"
 Begin VB.Form FrmWizard 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Ceasium Meeting Recorder Alpha"
-   ClientHeight    =   3465
+   ClientHeight    =   3345
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   6795
@@ -19,9 +19,18 @@ Begin VB.Form FrmWizard
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3465
+   ScaleHeight     =   3345
    ScaleWidth      =   6795
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
+   Begin APNGViewer.ucAPNG ButtonDock 
+      Height          =   480
+      Left            =   3120
+      Top             =   3000
+      Width           =   480
+      _ExtentX        =   847
+      _ExtentY        =   847
+      Data            =   "FrmWizard.frx":0000
+   End
    Begin APNGViewer.ucAPNG ButtonWebsite 
       Height          =   960
       Left            =   480
@@ -30,7 +39,7 @@ Begin VB.Form FrmWizard
       Width           =   960
       _ExtentX        =   1693
       _ExtentY        =   1693
-      Data            =   "FrmWizard.frx":0000
+      Data            =   "FrmWizard.frx":069A
    End
    Begin APNGViewer.ucAPNG ButtonUpdate 
       Height          =   960
@@ -40,7 +49,7 @@ Begin VB.Form FrmWizard
       Width           =   960
       _ExtentX        =   1693
       _ExtentY        =   1693
-      Data            =   "FrmWizard.frx":0CFB
+      Data            =   "FrmWizard.frx":1395
    End
    Begin APNGViewer.ucAPNG ButtonHelp 
       Height          =   960
@@ -50,7 +59,7 @@ Begin VB.Form FrmWizard
       Width           =   960
       _ExtentX        =   1693
       _ExtentY        =   1693
-      Data            =   "FrmWizard.frx":19E3
+      Data            =   "FrmWizard.frx":207D
    End
    Begin APNGViewer.ucAPNG ButtonClose 
       Height          =   960
@@ -60,7 +69,7 @@ Begin VB.Form FrmWizard
       Width           =   960
       _ExtentX        =   1693
       _ExtentY        =   1693
-      Data            =   "FrmWizard.frx":2107
+      Data            =   "FrmWizard.frx":27A1
    End
    Begin APNGViewer.ucAPNG ButtonOpenFile 
       Height          =   960
@@ -70,7 +79,7 @@ Begin VB.Form FrmWizard
       Width           =   960
       _ExtentX        =   1693
       _ExtentY        =   1693
-      Data            =   "FrmWizard.frx":26F7
+      Data            =   "FrmWizard.frx":2D91
    End
    Begin APNGViewer.ucAPNG ButtonAbout 
       Height          =   960
@@ -80,7 +89,7 @@ Begin VB.Form FrmWizard
       Width           =   960
       _ExtentX        =   1693
       _ExtentY        =   1693
-      Data            =   "FrmWizard.frx":2D5B
+      Data            =   "FrmWizard.frx":33F5
    End
    Begin APNGViewer.ucAPNG ButtonRec 
       Height          =   960
@@ -90,7 +99,7 @@ Begin VB.Form FrmWizard
       Width           =   960
       _ExtentX        =   1693
       _ExtentY        =   1693
-      Data            =   "FrmWizard.frx":364C
+      Data            =   "FrmWizard.frx":3CE6
    End
    Begin APNGViewer.ucAPNG ButtonClock 
       Height          =   960
@@ -100,7 +109,7 @@ Begin VB.Form FrmWizard
       Width           =   960
       _ExtentX        =   1693
       _ExtentY        =   1693
-      Data            =   "FrmWizard.frx":3BF2
+      Data            =   "FrmWizard.frx":428C
    End
 End
 Attribute VB_Name = "FrmWizard"
@@ -149,7 +158,13 @@ Load FrmClock
 End Sub
 
 Private Sub ButtonClose_Click()
-End
+quit
+End Sub
+
+Private Sub ButtonDock_Click()
+Load FrmDock
+FrmDock.Show
+Me.Hide
 End Sub
 
 Private Sub ButtonHelp_Click()
@@ -193,4 +208,6 @@ Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y A
     SendMessage Me.hwnd, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0
 End Sub
 
-
+Private Sub Form_Unload(Cancel As Integer)
+quit
+End Sub
