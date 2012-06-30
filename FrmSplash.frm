@@ -46,9 +46,9 @@ Private Declare Function DwmIsCompositionEnabled Lib "dwmapi.dll" (ByRef enabled
 Private Declare Function DwmExtendFrameIntoClientArea Lib "dwmapi.dll" (ByVal hwnd As Long, margin As MARGINS) As Long
 Private Declare Sub InitCommonControls Lib "comctl32.dll" ()
 Private Declare Function CreateSolidBrush Lib "gdi32" (ByVal crColor As Long) As Long
-Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal hObject As Long) As Long
+Private Declare Function SelectObject Lib "gdi32" (ByVal hDC As Long, ByVal hObject As Long) As Long
 Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect As RECT) As Long
-Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As RECT, ByVal hBrush As Long) As Long
+Private Declare Function FillRect Lib "user32" (ByVal hDC As Long, lpRect As RECT, ByVal hBrush As Long) As Long
 Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As Long
 
 Private Type RECT
@@ -65,7 +65,7 @@ Private Type MARGINS
   m_Button As Long
 End Type
 
-
+'RunAsAdministrator Replace(App.Path, "\", "\\") & "\\EXE2.exe", "", "", 1
 Private Sub Form_Load()
     Dim mg As MARGINS, en As Long
     mg.m_Left = -1
@@ -81,9 +81,9 @@ End Sub
 Private Sub Form_Paint()
     Dim hBrush As Long, m_Rect As RECT, hBrushOld As Long
     hBrush = CreateSolidBrush(RGB(0, 0, 0))
-    hBrushOld = SelectObject(Me.hdc, hBrush)
+    hBrushOld = SelectObject(Me.hDC, hBrush)
     GetClientRect Me.hwnd, m_Rect
-    FillRect Me.hdc, m_Rect, hBrush
-    SelectObject Me.hdc, hBrushOld
+    FillRect Me.hDC, m_Rect, hBrush
+    SelectObject Me.hDC, hBrushOld
     DeleteObject hBrush
 End Sub
