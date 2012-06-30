@@ -75,7 +75,7 @@ Private Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal hObj
 Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect As RECT) As Long
 Private Declare Function FillRect Lib "user32" (ByVal hdc As Long, lpRect As RECT, ByVal hBrush As Long) As Long
 Private Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As Long
-
+Dim en
 Private Type RECT
         Left As Long
         Top As Long
@@ -120,6 +120,8 @@ Me.Left = Int((Screen.Width - Me.Width) / 2)
 End Sub
 
 Private Sub Form_Paint()
+    DwmIsCompositionEnabled en
+    If en Then
     Dim hBrush As Long, m_Rect As RECT, hBrushOld As Long
     hBrush = CreateSolidBrush(RGB(0, 0, 0))
     hBrushOld = SelectObject(Me.hdc, hBrush)
@@ -127,6 +129,8 @@ Private Sub Form_Paint()
     FillRect Me.hdc, m_Rect, hBrush
     SelectObject Me.hdc, hBrushOld
     DeleteObject hBrush
+    End If
+
 End Sub
 
 Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)

@@ -194,6 +194,8 @@ Me.Caption = "Ceasium Meeting Recorder " & Versionstring
 End Sub
 
 Private Sub Form_Paint()
+    DwmIsCompositionEnabled en
+    If en Then
     Dim hBrush As Long, m_Rect As RECT, hBrushOld As Long
     hBrush = CreateSolidBrush(RGB(0, 0, 0))
     hBrushOld = SelectObject(Me.hdc, hBrush)
@@ -201,6 +203,8 @@ Private Sub Form_Paint()
     FillRect Me.hdc, m_Rect, hBrush
     SelectObject Me.hdc, hBrushOld
     DeleteObject hBrush
+    End If
+
 End Sub
 
 Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
