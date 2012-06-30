@@ -1,0 +1,7 @@
+ModMain = 41, 336, 948, 768, C
+FrmSplash = 330, 254, 1239, 686, C, 76, 43, 985, 596, C
+ModWindow = 32, 52, 941, 481, C
+FrmWizard = 83, 199, 992, 628, C, 255, 89, 778, 518, C
+FrmAbout = 75, 310, 984, 739, C, 88, 170, 997, 599, C
+ModVBWin7DWMApi = 0, 0, 0, 0, C
+ModVBWin7TaskBar = 0, 0, 0, 0, C
