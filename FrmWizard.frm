@@ -151,6 +151,14 @@ Private Sub ButtonHelp_Click()
 MsgBox "该功能在当前版本中不可用。", vbOKOnly + vbDefaultButton1 + vbInformation + vbApplicationModal, "Ceasium Meeting Recorder"
 End Sub
 
+Private Sub ButtonUpdate_Click()
+MsgBox "该功能在当前版本中不可用。", vbOKOnly + vbDefaultButton1 + vbInformation + vbApplicationModal, "Ceasium Meeting Recorder"
+End Sub
+
+Private Sub ButtonWebsite_Click()
+Shell "cmd /c explorer https://sourceforge.net/projects/caesiummr/"
+End Sub
+
 Private Sub Form_Load()
 Me.Caption = "Ceasium Meeting Recorder " & Versionstring
     Dim mg As MARGINS, en As Long
