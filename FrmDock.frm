@@ -16,7 +16,7 @@ Begin VB.Form FrmDock
    ShowInTaskbar   =   0   'False
    Begin APNGViewer.ucAPNG ButtonExpand 
       Height          =   480
-      Left            =   1800
+      Left            =   1740
       Top             =   540
       Width           =   480
       _ExtentX        =   847
