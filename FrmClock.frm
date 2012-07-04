@@ -124,8 +124,8 @@ End Sub
 
 Private Sub ButtonRestart_Click()
 CProvider.Clear
-CProvider.Start
-Me.Caption = "计时器 - 正在运行"
+'CProvider.Start
+If CProvider.CEnabled = True Then Me.Caption = "计时器 - 正在运行" Else If CProvider.Hms > 0 Then Me.Caption = "计时器 - 已暂停" Else Me.Caption = "计时器 - 已停止"
 End Sub
 
 Private Sub ButtonStart_Click()

@@ -29,17 +29,17 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Public Sec, Hms
-
+Private EnableStatus As Boolean
 
 Private Sub Form_Load()
 Me.Hide
-
+EnableStatus = False
 End Sub
-
 
 Public Sub Start()
 Timer1.Enabled = True
 Timer2.Enabled = True
+EnableStatus = True
 End Sub
 
 Private Sub Timer1_Timer()
@@ -55,6 +55,7 @@ End Sub
 Public Sub Pause()
 Timer1.Enabled = False
 Timer2.Enabled = False
+EnableStatus = False
 End Sub
 
 Public Sub Clear()
@@ -62,4 +63,11 @@ Sec = 0
 Hms = 0
 End Sub
 
+Public Property Get CEnabled() As Variant
+CEnabled = EnableStatus
+End Property
 
+Public Property Let CEnabled(ByVal vNewValue As Variant)
+If vNewValue Then Me.Start Else Me.Pause
+CEnableStatus = vNewValue
+End Property

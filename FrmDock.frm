@@ -2,17 +2,17 @@ VERSION 5.00
 Object = "{BAACC8BE-5CF7-41EE-BE50-E7D125FEF313}#1.0#0"; "APNGViewer.ocx"
 Begin VB.Form FrmDock 
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Ceasium Meeting Recorder - Docking Panel"
+   Caption         =   "    Ceasium Meeting Recorder - Docking Panel"
    ClientHeight    =   885
    ClientLeft      =   8055
    ClientTop       =   375
-   ClientWidth     =   4155
+   ClientWidth     =   4185
    ControlBox      =   0   'False
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   885
-   ScaleWidth      =   4155
+   ScaleWidth      =   4185
    ShowInTaskbar   =   0   'False
    Begin APNGViewer.ucAPNG ButtonExpand 
       Height          =   480
