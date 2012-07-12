@@ -1,5 +1,5 @@
 Type=Exe
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\Windows\SysWOW64\stdole2.tlb#OLE Automation
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\WINDOWS\system32\stdole2.tlb#OLE Automation
 Module=ModMain; ModMain.bas
 Form=FrmSplash.frm
 Module=ModWindow; ModWindow.bas
@@ -13,6 +13,7 @@ Form=FrmDock.frm
 Form=FrmClockProvider.frm
 Module=ModTimer; ModTimer.bas
 ResFile32="Resources.res"
+Class=clsOS; clsOS.cls
 Startup="Sub Main"
 HelpFile=""
 Title="CeasiumMeetingRecorder"
@@ -58,3 +59,6 @@ AppIconFile=.\Resources\icon2.ico
 SendCommandArgs=0
 SymbDbgPref=0
 RevisionVersion=0
+
+[MS Transaction Server]
+AutoRefresh=1

@@ -1,5 +1,5 @@
 VERSION 5.00
-Begin VB.Form FrmSplash 
+Begin VB.Form FrmSplash7 
    BackColor       =   &H00F1FFFF&
    BorderStyle     =   0  'None
    Caption         =   "Form1"
@@ -20,7 +20,7 @@ Begin VB.Form FrmSplash
       BackStyle       =   0  'Transparent
       Caption         =   "Loading..."
       BeginProperty Font 
-         Name            =   "Î¢ÈíÑÅºÚ"
+         Name            =   "ËÎÌå"
          Size            =   36
          Charset         =   134
          Weight          =   400
@@ -36,7 +36,7 @@ Begin VB.Form FrmSplash
       Width           =   3360
    End
 End
-Attribute VB_Name = "FrmSplash"
+Attribute VB_Name = "FrmSplash7"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True

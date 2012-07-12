@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{BAACC8BE-5CF7-41EE-BE50-E7D125FEF313}#1.0#0"; "APNGViewer.ocx"
-Begin VB.Form FrmClock 
+Begin VB.Form FrmClock7 
    BackColor       =   &H00FFFFFF&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "¼ÆÊ±Æ÷ - ÒÑÍ£Ö¹"
@@ -8,15 +8,6 @@ Begin VB.Form FrmClock
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   5955
-   BeginProperty Font 
-      Name            =   "Î¢ÈíÑÅºÚ"
-      Size            =   9
-      Charset         =   134
-      Weight          =   400
-      Underline       =   0   'False
-      Italic          =   0   'False
-      Strikethrough   =   0   'False
-   EndProperty
    ForeColor       =   &H00FFFFFF&
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -71,7 +62,7 @@ Begin VB.Form FrmClock
       BackStyle       =   0  'Transparent
       Caption         =   "00:00:00"
       BeginProperty Font 
-         Name            =   "Î¢ÈíÑÅºÚ"
+         Name            =   "ËÎÌå"
          Size            =   72
          Charset         =   134
          Weight          =   400
@@ -87,7 +78,7 @@ Begin VB.Form FrmClock
       Width           =   5730
    End
 End
-Attribute VB_Name = "FrmClock"
+Attribute VB_Name = "FrmClock7"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True

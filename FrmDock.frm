@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{BAACC8BE-5CF7-41EE-BE50-E7D125FEF313}#1.0#0"; "APNGViewer.ocx"
-Begin VB.Form FrmDock 
+Begin VB.Form FrmDock7 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "    Ceasium Meeting Recorder - Docking Panel"
    ClientHeight    =   885
@@ -64,7 +64,7 @@ Begin VB.Form FrmDock
       Data            =   "FrmDock.frx":1CBC
    End
 End
-Attribute VB_Name = "FrmDock"
+Attribute VB_Name = "FrmDock7"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True

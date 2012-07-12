@@ -1,21 +1,12 @@
 VERSION 5.00
 Object = "{BAACC8BE-5CF7-41EE-BE50-E7D125FEF313}#1.0#0"; "APNGViewer.ocx"
-Begin VB.Form FrmWizard 
+Begin VB.Form FrmWizard7 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Ceasium Meeting Recorder Alpha"
    ClientHeight    =   3345
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   6795
-   BeginProperty Font 
-      Name            =   "Î¢ÈíÑÅºÚ"
-      Size            =   9
-      Charset         =   134
-      Weight          =   400
-      Underline       =   0   'False
-      Italic          =   0   'False
-      Strikethrough   =   0   'False
-   EndProperty
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -112,7 +103,7 @@ Begin VB.Form FrmWizard
       Data            =   "FrmWizard.frx":428C
    End
 End
-Attribute VB_Name = "FrmWizard"
+Attribute VB_Name = "FrmWizard7"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
