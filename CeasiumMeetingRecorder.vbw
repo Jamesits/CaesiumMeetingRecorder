@@ -1,7 +1,7 @@
 ModMain = 42, 92, 949, 524, C
 FrmSplash7 = -51, 173, 858, 605, C, -126, 77, 783, 630, C
 ModWindow = 32, 52, 941, 481, C
-FrmWizard7 = 118, 38, 1027, 467, C, 148, 68, 677, 518, C
+FrmWizard7 = -68, 126, 841, 555, C, 148, 68, 677, 518, C
 FrmAbout = 75, 310, 984, 739, C, 88, 170, 997, 599, C
 ModVBWin7DWMApi = 25, 25, 944, 556, C
 ModVBWin7TaskBar = 0, 0, 0, 0, C

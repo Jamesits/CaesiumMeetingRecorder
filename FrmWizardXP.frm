@@ -138,7 +138,7 @@ MsgBox "该功能在当前版本中不可用。", vbOKOnly + vbDefaultButton1 + vbInformation
 End Sub
 
 Private Sub ButtonWebsite_Click()
-Shell "cmd /c explorer https://sourceforge.net/projects/caesiummr/"
+Shell "cmd /c explorer https://sourceforge.net/projects/caesiummr/" '360大烧饼误报
 End Sub
 
 Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
