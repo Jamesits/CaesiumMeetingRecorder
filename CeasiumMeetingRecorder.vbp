@@ -13,6 +13,10 @@ Form=FrmDock.frm
 Form=FrmClockProvider.frm
 Module=ModTimer; ModTimer.bas
 Class=clsOS; clsOS.cls
+Form=FrmSplashXP.frm
+Form=FrmClockXP.frm
+Form=FrmDockXP.frm
+Form=FrmWizardXP.frm
 ResFile32="Resources.res"
 Startup="Sub Main"
 HelpFile=""
@@ -24,12 +28,13 @@ HelpContextID="0"
 CompatibleMode="0"
 MajorVer=6
 MinorVer=0
-RevisionVer=51
+RevisionVer=54
 AutoIncrementVer=1
 ServerSupportFiles=0
 VersionCompanyName="÷Ïª¿Ω‹"
 VersionLegalCopyright="Copyright (c)2012 ÷Ïª¿Ω‹.All rights reserved."
 VersionProductName="Ceasium Meeting Recorder"
+CondComp="IN_IDE = 1"
 CompilationType=0
 OptimizationType=0
 FavorPentiumPro(tm)=0
@@ -56,9 +61,10 @@ XPManifest=0
 ResBuildName=.\MRC.dll
 ReplaceIcon=1
 AppIconFile=.\Resources\icon2.ico
-SendCommandArgs=0
+SendCommandArgs=1
 SymbDbgPref=0
 RevisionVersion=0
+CondComp="IN_IDE = 0"
 
 [MS Transaction Server]
 AutoRefresh=1

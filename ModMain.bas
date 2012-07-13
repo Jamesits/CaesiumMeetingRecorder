@@ -28,7 +28,12 @@ FrmSplash.Hide
 FrmWizard.Show
 Unload FrmSplash
 Else
-End
+Load FrmSplashXP
+FrmSplashXP.Show
+Load FrmWizardXP
+FrmSplashXP.Hide
+FrmWizardXP.Show
+Unload FrmSplashXP
 End If
 End Sub
 Public Sub quit()

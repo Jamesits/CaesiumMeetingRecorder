@@ -94,8 +94,8 @@ Private Type MARGINS
 End Type
 
 Private Sub ButtonClock_Click()
-Load FrmClock
- FrmClock.Show
+Load FrmClock7
+ FrmClock7.Show
 End Sub
 
 Private Sub ButtonClose_Click()
@@ -103,7 +103,7 @@ quit
 End Sub
 
 Private Sub ButtonExpand_Click()
-FrmWizard.Show
+FrmWizard7.Show
 Me.Hide
 End Sub
 

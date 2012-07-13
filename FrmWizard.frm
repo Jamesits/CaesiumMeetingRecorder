@@ -144,7 +144,7 @@ Load FrmAbout
 End Sub
 
 Private Sub ButtonClock_Click()
-Load FrmClock
+Load FrmClock7
  FrmClock.Show
 End Sub
 
@@ -153,8 +153,8 @@ quit
 End Sub
 
 Private Sub ButtonDock_Click()
-Load FrmDock
-FrmDock.Show
+Load FrmDock7
+FrmDock7.Show
 Me.Hide
 End Sub
 
