@@ -20,7 +20,6 @@ m_transparencyKey = RGB(0, 0, 0)
 SelectForm
 End Sub
 Private Sub SelectForm()
-
 If Enable7Feature Then
 Load FrmSplash
 FrmSplash.Show
